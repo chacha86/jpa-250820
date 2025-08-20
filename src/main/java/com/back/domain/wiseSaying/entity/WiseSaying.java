@@ -12,6 +12,7 @@ import lombok.ToString;
 @ToString
 @Entity
 public class WiseSaying {
+
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private int id; // Int
