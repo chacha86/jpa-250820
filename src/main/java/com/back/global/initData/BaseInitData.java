@@ -15,7 +15,7 @@ public class BaseInitData {
     @Bean
     ApplicationRunner initDataRunner() {
         return args -> {
-            postRepository.count();
+            postRepository.count(); // select count(*) from post;
         };
     }
 
