@@ -22,7 +22,6 @@ public class BaseInitData {
     private final PostService postService;
 
     @Bean
-    @Transactional
     ApplicationRunner initDataRunner() {
         return args -> {
 
@@ -51,6 +50,14 @@ public class BaseInitData {
 
         Optional<Post> opPost = postService.getPost(1);
         // select * from post where id = 1;
+    }
+
+    void work3() {
+        Post post1 = postService.getPost(1).get();
+        Post post2 = postService.getPost(2).get();
+
+        postService.delete(post1);
+        postService.delete(post2);
     }
 
 }
