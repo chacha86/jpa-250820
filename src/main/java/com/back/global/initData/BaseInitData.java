@@ -1,5 +1,6 @@
 package com.back.global.initData;
 
+import com.back.domain.post.entity.Post;
 import com.back.domain.post.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
@@ -17,7 +18,10 @@ public class BaseInitData {
         return args -> {
 //            postRepository.count(); // select count(*) from post;
 
-            postRepository.findById(4);
+            Post post1 = new Post("제목1", "내용1");
+            postRepository.save(post1);
+
+            postRepository.findById(1);
             // select * from post where id = 1;
 
         };
