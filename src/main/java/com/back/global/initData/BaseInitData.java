@@ -3,9 +3,11 @@ package com.back.global.initData;
 import com.back.domain.post.entity.Post;
 import com.back.domain.post.service.PostService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
@@ -14,6 +16,9 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class BaseInitData {
 
+    @Autowired
+    @Lazy
+    private BaseInitData self;
     private final PostService postService;
 
     @Bean
@@ -21,8 +26,8 @@ public class BaseInitData {
     ApplicationRunner initDataRunner() {
         return args -> {
 
-            work1();
-            work2();
+            self.work1();
+            self.work2();
 
         };
     }
