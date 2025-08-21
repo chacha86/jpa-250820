@@ -28,6 +28,10 @@ public class BaseInitData {
             self.work1();
             self.work2();
 
+            new Thread(() -> {
+                self.work3();
+            }).start();
+
         };
     }
 
@@ -57,6 +61,9 @@ public class BaseInitData {
         Post post2 = postService.getPost(2).get();
 
         postService.delete(post1);
+
+        if(true) throw new RuntimeException("테스트용 예외 발생");
+
         postService.delete(post2);
     }
 
