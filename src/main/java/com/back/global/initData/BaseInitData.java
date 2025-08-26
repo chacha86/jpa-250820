@@ -49,7 +49,7 @@ public class BaseInitData {
     }
 
     // 조회
-    @Transactional
+    @Transactional(readOnly = true)
     void work2() {
 
         Optional<Post> opPost = postService.getPost(1);
