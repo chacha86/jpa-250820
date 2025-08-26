@@ -14,6 +14,7 @@ public class Member extends BaseEntity {
     private String username;
     private String nickname;
 
+
     public Member(String username, String nickname) {
         this.username = username;
         this.nickname = nickname;
