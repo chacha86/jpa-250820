@@ -47,8 +47,8 @@ public class BaseInitData {
 
 
         // 서비스를 도입해서 비즈니스 로직을 재사용
-        postService.write("제목1", "내용1");
-        postService.write("제목2", "내용2");
+        postService.write(3L,"제목1", "내용1");
+        postService.write(4L, "제목2", "내용2");
     }
 
     // 조회
